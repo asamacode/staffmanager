@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>List Departments</title>
+</head>
+<body>
+	<h3>List Departments</h3>
+	<hr>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th></th>
+		</tr>
+		<tr th:each="item : ${departs}">
+			<td th:text="${item.id}"></td>
+			<td th:text="${item.name}"></td>
+			<td>
+				<a th:href="@{'/departs/edit/' + ${item.id}}">Edit</a>
+				<a th:href="@{'/departs/delete/' + ${item.id}}">Delete</a>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>
